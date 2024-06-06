@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+
+    <h1>Processo seletivo</h1>
+    <marquee behavior="" direction="right">Testando...</marquee>
+    <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, blanditiis maiores doloremque a magni possimus delectus similique quibusdam, sequi culpa mollitia facilis ipsam. Cumque, quaerat, aut fugit dolorum ex repellat ipsa ea natus optio tempore odio veritatis. Atque possimus consectetur, sit accusantium labore eum similique impedit non aperiam doloribus ab.</p> -->
+    <button id="btn" onclick="iniciar()">Iniciar</button>
+    
+    <div>
+        <h2>Subtitulo</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio temporibus, maiores adipisci fugiat laborum itaque! Voluptatum facere quasi quibusdam odio.
+            <a href="#">ler mais..</a>
+        </p>
+
+        
+
+    </div>
+    <script>
+        console.log(document.getElementsByTagName('p'))
+        // console.log("Pronto!")
+        // document.addEventListener('DOMContentLoaded', () => {
+        //     console.log('carregou tudo')
+        // })
+        const request = window.indexedDB.open("MyTestDatabase", 3);
+
+        request.onerror = (event) => console.log(event)
+
+        request.onsuccess = (event) => {
+            const db = event.target.result
+
+            console.log(db)
+
+            // const objectStore = db.createObjectStore("name", { keyPath: "myKey" });
+        }
+
+        request.onupgradeneeded = (event) => {
+            // Save the IDBDatabase interface
+            const db = event.target.result;
+
+            // Create an objectStore for this database
+            const objectStore = db.createObjectStore("users", { keyPath: "test" });
+            };
+    </script>
+    <script src="index.js"></script>
+</body>
+</html>
